@@ -1,52 +1,44 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-const Texto = ({ style }) => {
-  const [texto, setTexto] = useState("Hola Alexs")
-  //funcion
-  const actualizaTexto = () => {
-    setTexto("Adios Alexs")
-  }
-
-  return (
-    <Text style={[styles.text, style]} onPress={actualizaTexto}>{texto}</Text>
-  )
-}
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
+  const [text, setText] = useState("");
+  const [submitted, setSubmit] = useState("");
+
+
+
   return (
     <View style={styles.container}>
-      <Texto style={styles.texto1} />
-      <Texto style={styles.texto2} />
-      <Texto style={styles.texto3} />
+      <Text>Texto escrito:{text}</Text>
+      <Text>Texto boton:{submitted}</Text>
+      <TextInput style={styles.input}
+        placeholder="Ingrese su texto..."
+        onChangeText={t => setText(t)}
+        defaultValue={text}
+      />
+      <Button
+        onPress={() => {
+          setSubmit(text)
+          alert("Texto enviado con exito")
+        }}
+        title="Aceptar"
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    width: '100%',
+    backgroundColor: "#eee",
+    fontSize: 25,
+    color: "red"
+  },
   container: {
     flex: 1,//este representa todo ya que es el que envuelve a todo
     // backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    color: "white",
-    fontSize: 24,
-    height: 100,
-    width: 100
-  },
-  texto1: {//1+2+3=6
-    flex: 1,//un sexto
-    backgroundColor: "red",
-  },
-  texto2: {
-    flex: 2,//un tercio
-    backgroundColor: "blue"
-  },
-  texto3: {
-    flex: 3,//tiene la mitad
-    backgroundColor: "green"
-  }
-
 });
