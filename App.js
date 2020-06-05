@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ScrollView, Dimensions } from 'react-native';
 
 export default function App() {
   const [text, setText] = useState("");
@@ -9,20 +9,76 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Texto escrito:{text}</Text>
-      <Text>Texto boton:{submitted}</Text>
-      <TextInput style={styles.input}
-        placeholder="Ingrese su texto..."
-        onChangeText={t => setText(t)}
-        defaultValue={text}
-      />
-      <Button
-        onPress={() => {
-          setSubmit(text)
-          alert("Texto enviado con exito")
-        }}
-        title="Aceptar"
-      />
+      <ScrollView style={styles.ScrollView}>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+        <Text>Texto escrito:{text}</Text>
+        <Text>Texto boton:{submitted}</Text>
+
+        <TextInput style={styles.input}
+          placeholder="Ingrese s)u texto..."
+          onChangeText={t => setText(t)}
+          defaultValue={text}
+        />
+        <Button
+          onPress={() => {
+            setSubmit(text)
+            alert("Texto enviado con exito")
+          }}
+          title="Aceptar"
+          color="red"
+        />
+      </ScrollView>
     </View>
   );
 }
@@ -41,4 +97,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  ScrollView: {
+    // width: Dimensions.get("window").width,
+    width: "100%"
+  }
 });
